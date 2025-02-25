@@ -51,7 +51,8 @@ public abstract class TempDatapackManager {
                             .append("` ")
                             .append(Text.translatable("message.cmdkit.word.is"))
                             .append(Text.translatable("message.cmdkit.word." + (isImport ? "imported" : "linked")))
-                            .append("!")
+                            .append("!"),
+                    false
             );
         } catch (Exception e) {
             throw new RuntimeException("Fail to " + (isImport ? "import" : "link") + " datapack: " + e.getClass() + " "+ e.getMessage());
@@ -107,7 +108,8 @@ public abstract class TempDatapackManager {
                                     .append("` ")
                                     .append(Text.translatable("message.cmdkit.word.is"))  // `is `
                                     .append(Text.translatable("message.cmdkit.word." + (isDelete ? "deleted" : "unlinked")))
-                                    .append("!")
+                                    .append("!"),
+                            false
                     );
                 } else {
                     throw new RuntimeException("Datapack `" + name + "` does not exist!");
