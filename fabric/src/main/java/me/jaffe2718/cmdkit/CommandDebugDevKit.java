@@ -1,5 +1,6 @@
 package me.jaffe2718.cmdkit;
 
+import me.jaffe2718.cmdkit.config.Config;
 import net.fabricmc.api.ModInitializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -44,9 +45,9 @@ public class CommandDebugDevKit implements ModInitializer {
     public void onInitialize() {
         LOGGER.info("Initializing CommandDebugDevKit...");
         try {
-            executeCmdSocket = new ServerSocket(0);
-            suggestCmdSocket = new ServerSocket(0);
-            manageDatapackSocket = new ServerSocket(0);
+            executeCmdSocket = new ServerSocket(Config.executionPort);
+            suggestCmdSocket = new ServerSocket(Config.suggestionPort);
+            manageDatapackSocket = new ServerSocket(Config.packManagementPort);
             // Get the local IP address
             Enumeration<NetworkInterface> networkInterfaces = NetworkInterface.getNetworkInterfaces();
             while (networkInterfaces.hasMoreElements()) {
