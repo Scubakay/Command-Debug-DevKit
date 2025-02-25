@@ -9,5 +9,5 @@
     "message.cmdkit.word.imported": "已导入",
     "message.cmdkit.word.linked": "已链接",
     "message.cmdkit.word.unlinked": "已取消链接",
-    "message.cmdkit.warining": "§c§l警告: §r§c不要与不受信任的客户端共享此主机和端口!"
+    "message.cmdkit.warning": "§c§l警告: §r§c不要与不受信任的客户端共享此主机和端口!"
 }

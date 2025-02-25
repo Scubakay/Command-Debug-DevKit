@@ -215,28 +215,11 @@ public abstract class EventHandler {
         } else if (!shown) {
             client.player.sendMessage(Text.translatable("message.cmdkit.run"), false);
 
-            client.player.sendMessage(Text.translatable("message.cmdkit.service.execution"), false);
-            client.player.sendMessage(clickToCopy(
-                    2,
-                    String.format("%s:%d", CommandDebugDevKit.ipv4, CommandDebugDevKit.executeCmdSocket.getLocalPort()),
-                    ColorHelper.getArgb(255, 170, 0)
-            ), false);
+            CommandDebugDevKit.LOGGER.info(String.format(Text.translatable("message.cmdkit.service.execution").getString(), CommandDebugDevKit.ipv4, CommandDebugDevKit.executeCmdSocket.getLocalPort()));
+            CommandDebugDevKit.LOGGER.info(String.format(Text.translatable("message.cmdkit.service.suggestion").getString(), CommandDebugDevKit.ipv4, CommandDebugDevKit.suggestCmdSocket.getLocalPort()));
+            CommandDebugDevKit.LOGGER.info(String.format(Text.translatable("message.cmdkit.service.datapackManagement").getString(), CommandDebugDevKit.ipv4, CommandDebugDevKit.manageDatapackSocket.getLocalPort()));
+            CommandDebugDevKit.LOGGER.info(Text.translatable("message.cmdkit.warning").getString());
 
-            client.player.sendMessage(Text.translatable("message.cmdkit.service.suggestion"), false);
-            client.player.sendMessage(clickToCopy(
-                    2,
-                    String.format("%s:%d", CommandDebugDevKit.ipv4, CommandDebugDevKit.suggestCmdSocket.getLocalPort()),
-                    ColorHelper.getArgb(255, 85, 255)
-            ), false);
-
-            client.player.sendMessage(Text.translatable("message.cmdkit.service.datapackManagement"), false);
-            client.player.sendMessage(clickToCopy(
-                    2,
-                    String.format("%s:%d", CommandDebugDevKit.ipv4, CommandDebugDevKit.manageDatapackSocket.getLocalPort()),
-                    ColorHelper.getArgb(85, 255, 255)
-            ), false);
-
-            client.player.sendMessage(Text.translatable("message.cmdkit.warining"), false);
             shown = true;
         }
     }
